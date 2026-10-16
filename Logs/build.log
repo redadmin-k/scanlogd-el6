@@ -1,0 +1,95 @@
+Mock Version: 6.9
+Executing command: ['bash', '--login', '-c', '/usr/bin/rpmbuild -bs --target x86_64 --nodeps /builddir/build/SPECS/scanlogd.spec'] with env {'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8'} and shell False
+warning: Could not canonicalize hostname: alma8-plain-gm
+Building target platforms: x86_64
+Building for target x86_64
+Wrote: /builddir/build/SRPMS/scanlogd-2.2.8-1.el6.src.rpm
+Child return code was: 0
+Executing command: ['bash', '--login', '-c', '/usr/bin/rpmbuild -bb --target x86_64 --nodeps /builddir/build/SPECS/scanlogd.spec'] with env {'TERM': 'vt100', 'SHELL': '/bin/bash', 'HOME': '/builddir', 'HOSTNAME': 'mock', 'PATH': '/usr/bin:/bin:/usr/sbin:/sbin', 'PROMPT_COMMAND': 'printf "\\033]0;<mock-chroot>\\007"', 'PS1': '<mock-chroot> \\s-\\v\\$ ', 'LANG': 'C.UTF-8'} and shell False
+Building target platforms: x86_64
+Building for target x86_64
+Executing(%prep): /bin/sh -e /var/tmp/rpm-tmp.RJ4KAb
++ umask 022
++ cd /builddir/build/BUILD
++ LANG=C
++ export LANG
++ unset DISPLAY
++ cd /builddir/build/BUILD
++ rm -rf scanlogd-2.2.8
++ /usr/bin/gzip -dc /builddir/build/SOURCES/scanlogd-2.2.8.tar.gz
++ /bin/tar -xf -
++ STATUS=0
++ '[' 0 -ne 0 ']'
++ cd scanlogd-2.2.8
++ /bin/chmod -Rf a+rX,u+w,g-w,o-w .
++ sed -i 's|"/var/empty"|"/var/lib/scanlogd/empty"|' params.h
++ exit 0
+Executing(%build): /bin/sh -e /var/tmp/rpm-tmp.Q3nmlG
++ umask 022
++ cd /builddir/build/BUILD
++ cd scanlogd-2.2.8
++ LANG=C
++ export LANG
++ unset DISPLAY
++ make -j4 linux 'CFLAGS=-Wall -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic'
+gcc -Wall -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -c scanlogd.c
+gcc -Wall -O2 -g -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fexceptions -fstack-protector --param=ssp-buffer-size=4 -m64 -mtune=generic -c in_linux.c
+scanlogd.c: In function 'main':
+scanlogd.c:406: warning: ignoring return value of 'chdir', declared with attribute warn_unused_result
+gcc -s scanlogd.o in_linux.o -o scanlogd
++ exit 0
+Executing(%install): /bin/sh -e /var/tmp/rpm-tmp.Y5U2qb
++ umask 022
++ cd /builddir/build/BUILD
++ '[' /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64 '!=' / ']'
++ rm -rf /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64
+++ dirname /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64
++ mkdir -p /builddir/build/BUILDROOT
++ mkdir /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64
++ cd scanlogd-2.2.8
++ LANG=C
++ export LANG
++ unset DISPLAY
++ rm -rf /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64
++ install -Dpm 0755 scanlogd /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64/usr/sbin/scanlogd
++ install -Dpm 0644 scanlogd.8 /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64/usr/share/man/man8/scanlogd.8
++ install -Dpm 0755 /builddir/build/SOURCES/scanlogd.init /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64/etc/rc.d/init.d/scanlogd
++ install -d -m 0755 /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64/var/lib/scanlogd/empty
++ /usr/lib/rpm/find-debuginfo.sh --strict-build-id /builddir/build/BUILD/scanlogd-2.2.8
++ /usr/lib/rpm/check-buildroot
++ /usr/lib/rpm/redhat/brp-compress
++ /usr/lib/rpm/redhat/brp-strip-static-archive /usr/bin/strip
++ /usr/lib/rpm/redhat/brp-strip-comment-note /usr/bin/strip /usr/bin/objdump
++ /usr/lib/rpm/brp-python-bytecompile /usr/bin/python
++ /usr/lib/rpm/redhat/brp-python-hardlink
++ /usr/lib/rpm/redhat/brp-java-repack-jars
+Processing files: scanlogd-2.2.8-1.el6.x86_64
+Executing(%doc): /bin/sh -e /var/tmp/rpm-tmp.y9wSNG
++ umask 022
++ cd /builddir/build/BUILD
++ cd scanlogd-2.2.8
++ DOCDIR=/builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64/usr/share/doc/scanlogd-2.2.8
++ export DOCDIR
++ rm -rf /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64/usr/share/doc/scanlogd-2.2.8
++ /bin/mkdir -p /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64/usr/share/doc/scanlogd-2.2.8
++ cp -pr LICENSE README.md /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64/usr/share/doc/scanlogd-2.2.8
++ exit 0
+Requires(interp): /bin/sh /bin/sh /bin/sh /bin/sh
+Requires(rpmlib): rpmlib(CompressedFileNames) <= 3.0.4-1 rpmlib(FileDigests) <= 4.6.0-1 rpmlib(PayloadFilesHavePrefix) <= 4.0-1
+Requires(pre): /bin/sh shadow-utils
+Requires(post): /bin/sh chkconfig
+Requires(preun): /bin/sh chkconfig initscripts
+Requires(postun): /bin/sh initscripts
+Requires: /bin/bash libc.so.6()(64bit) libc.so.6(GLIBC_2.2.5)(64bit) libc.so.6(GLIBC_2.3)(64bit) libc.so.6(GLIBC_2.3.4)(64bit) libc.so.6(GLIBC_2.4)(64bit) rtld(GNU_HASH)
+Processing files: scanlogd-debuginfo-2.2.8-1.el6.x86_64
+Checking for unpackaged file(s): /usr/lib/rpm/check-files /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64
+warning: Could not canonicalize hostname: alma8-plain-gm
+Wrote: /builddir/build/RPMS/scanlogd-2.2.8-1.el6.x86_64.rpm
+Wrote: /builddir/build/RPMS/scanlogd-debuginfo-2.2.8-1.el6.x86_64.rpm
+Executing(%clean): /bin/sh -e /var/tmp/rpm-tmp.KucBbd
++ umask 022
++ cd /builddir/build/BUILD
++ cd scanlogd-2.2.8
++ /bin/rm -rf /builddir/build/BUILDROOT/scanlogd-2.2.8-1.el6.x86_64
++ exit 0
+Child return code was: 0

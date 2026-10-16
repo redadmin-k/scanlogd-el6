@@ -1,0 +1,39 @@
+CPU info:
+Architecture:        x86_64
+CPU op-mode(s):      32-bit, 64-bit
+Byte Order:          Little Endian
+CPU(s):              4
+On-line CPU(s) list: 0-3
+Thread(s) per core:  1
+Core(s) per socket:  4
+Socket(s):           1
+NUMA node(s):        1
+Vendor ID:           AuthenticAMD
+BIOS Vendor ID:      QEMU
+CPU family:          15
+Model:               107
+Model name:          QEMU Virtual CPU version 2.5+
+BIOS Model name:     pc-i440fx-9.2
+Stepping:            1
+CPU MHz:             3095.350
+BogoMIPS:            6190.70
+Hypervisor vendor:   KVM
+Virtualization type: full
+L1d cache:           64K
+L1i cache:           64K
+L2 cache:            512K
+L3 cache:            16384K
+NUMA node0 CPU(s):   0-3
+Flags:               fpu de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush mmx fxsr sse sse2 ht syscall nx lm rep_good nopl cpuid extd_apicid tsc_known_freq pni ssse3 fma cx16 sse4_1 sse4_2 x2apic movbe popcnt aes xsave avx f16c hypervisor lahf_lm cmp_legacy abm 3dnowprefetch vmmcall bmi1 avx2 bmi2
+
+
+Memory:
+              total        used        free      shared  buff/cache   available
+Mem:          7.5Gi       542Mi       5.8Gi       1.0Mi       1.2Gi       6.7Gi
+Swap:         4.0Gi       831Mi       3.2Gi
+
+
+Storage (chroot, cache_topdir):
+Filesystem     Type  Size  Used Avail Use% Mounted on
+/dev/sda5      xfs    29G   18G   12G  61% /
+/dev/sda5      xfs    29G   18G   12G  61% /
